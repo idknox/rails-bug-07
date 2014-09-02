@@ -12,10 +12,6 @@ class TasksController < ApplicationController
     if params[:task][:completed] == 1
       @task.completed = true
     end
-    puts "*" * 80
-    puts params[:task][:completed]
-    puts @task.completed?
-    puts "*" * 80
     if @task.save
       redirect_to root_path, notice: "Task was created successfully!"
     else
